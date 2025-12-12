@@ -3,6 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// assets: 
+//   text box 
+//   wide image 
+//   portrait image
+//   text box (front) + wide image 
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
