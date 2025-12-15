@@ -12,6 +12,10 @@ import { DiReact } from "react-icons/di";
 import { SiSqlite } from "react-icons/si";
 import { IoLogoElectron } from "react-icons/io5";
 import { SiGnubash } from "react-icons/si";
+import { SiScrapy } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
+
+
 
 
 
@@ -60,7 +64,7 @@ function RegularText({text}) {
 function WideImage({src, alt}){
   return(
     <div className="flex w-full h-auto ">
-      <img src={src} alt={alt} className="w-full h-auto"/>
+      <img src={src} alt={alt} className="max-w-[200px] w-auto h-auto"/>
     </div>
   )
 }
@@ -128,6 +132,17 @@ function H3WithText({header, text}){
   )
 }
 
+function PortfolioSample({title, imageSrc, skills, description, githubUrl}){
+  return(
+    <div>
+      <H2Text text={title}/>
+      <WideImage src={imageSrc} alt="Project Image" />
+      <RegularText text={skills} />
+      <RegularText text={description} />
+      <ButtonIconLink text="View on GitHub" url={githubUrl} icon={ <DiGithubBadge size="1.5em"/> } />
+      </div>)
+}
+
   // about me components
 function Bio(text){
   return(
@@ -136,6 +151,7 @@ function Bio(text){
     </div>
   )
 }
+
 
 function Experience({text}){
   return(
@@ -166,16 +182,29 @@ function Profile({text}){
 
 function Skillset({text}){
   return(
+    <div>
+    <H2Text text = "My Skillset"/>
     <div className="grid grid-cols-20 gap-1 bg-white p-4 rounded shadow w-auto h-auto">
-      <SkillIcon icon={ <DiJavascript size="2em" /> } text="JavaScript"/>
-      <SkillIcon icon={ <DiPython size="2em" /> } text="Python"/>
       <SkillIcon icon={ <DiReact size="2em" /> } text="React"/>
+      <SkillIcon icon={ <FaFigma size="2em" /> } text="Figma"/>
+      <SkillIcon icon={ <IoLogoElectron size="2em" /> } text="ElectronJS"/>
+      <SkillIcon icon={ <DiPython size="2em" /> } text="Python"/>
+      <SkillIcon icon={ <SiScrapy size="2em" /> } text="Scrapy"/>      
       <SkillIcon icon={ <DiGit size="2em" /> } text="Git"/>
       <SkillIcon icon={ <SiSqlite size="2em" /> } text="SQLite"/>
-      <SkillIcon icon={ <IoLogoElectron size="2em" /> } text="ElectronJS"/>
       <SkillIcon icon={ <SiGnubash size="2em" /> } text="UNIX / Bash"/>
+    </div>/
     </div>
   )
+}
+
+function PortfolioSet({text}){
+  return(
+    <div>
+      <PortfolioSample title="Spinagotchi" imageSrc={null} skils="React, TailwindCSS, ElectronJS" description="A desktop tamagotchi" githubUrl="" />
+      <PortfolioSample title="Angela_Bot" imageSrc={null} skills="Python, SQLite" description="A general-use Discord bot based off of Angela from Lobotomy Corporation" githubUrl="" />
+      <PortfolioSample title="GigBytes" imageSrc={null} skills="Figma" description="A UI/UX mockup for an app where you can find local gigs anywhere" githubUrl="" />
+    </div>)
 }
 
 // assets: 
@@ -210,6 +239,7 @@ function App() {
     <div className="gap-10">
       <Profile />
       <Skillset />
+      <PortfolioSet />
       </div>
     </>
   )
