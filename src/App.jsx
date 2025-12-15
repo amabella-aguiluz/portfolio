@@ -68,10 +68,6 @@ function App() {
     <>
       <HeaderText header="test header"/>
       <RegularText text="test" />
-      <div className="text-base">base text</div>
-<div className="text-3xl font-bold">3xl header</div>
-<div className="text-5xl font-bold">5xl header</div>
-
       {/* <WideImage src={wide_pic} alt='wide image'/>
       <PortraitImage src={portrait_pic} alt='portrait image'/> */}
     </>
