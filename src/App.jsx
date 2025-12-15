@@ -2,7 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import large_pic from "./assets/wide.jpg"
 import portrait_pic from "./assets/pfp.jpg"
+
+// contact icons
 import { DiGithubBadge } from "react-icons/di";
+import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 // skillset icons
 import { DiGit } from "react-icons/di";
@@ -14,16 +18,14 @@ import { IoLogoElectron } from "react-icons/io5";
 import { SiGnubash } from "react-icons/si";
 import { SiScrapy } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
-
-
-
+import { RiTailwindCssFill } from "react-icons/ri";
 
 
 const colors = {
-    primary: "#007bff",
-    secondary: "#6c757d",
-    success: "#28a745",
-    accent: "#ff5722",};
+    text: "#FCF5EE",
+    light: "#FFC4C4",
+    main: "#EE6983",
+    dark: "#850E35",};
 
 
     // text components
@@ -85,6 +87,17 @@ function ButtonIcon({text, onClick, icon}){
     </button>
   )
 }
+function ButtonIconOnlyLink({url, icon}){
+  const click= () => {
+  window.open(url, "_blank");
+  };
+  return(
+    <button onClick={click} className="p-2 flex items-center">
+      {icon}
+    </button>
+  )
+}
+
 
 function ButtonIconLink({text,url, icon}){
   const click= () => {
@@ -107,7 +120,7 @@ function Button({text, onClick}){
 
 function SkillIcon({icon, text}){
   return(
-    <div className="flex flex-col items-center bg-white p-4 rounded shadow w-auto max-w-[100px] h-auto max-h-[120px]">
+    <div className="flex flex-col items-center bg-white p-4 rounded-2xl shadow w-[100px] h-[120px]">
       {icon}
       <div className="text-sm mt-2">{text}</div>
     </div>
@@ -152,6 +165,16 @@ function Bio(text){
   )
 }
 
+function ContactMeRow({text}){
+  return(
+    <div className="flex flex-row">
+      <ButtonIconOnlyLink icon={ <DiGithubBadge size="2em" /> } url="https://github.com/amabella-aguiluz" />
+      <ButtonIconOnlyLink icon={ <FaLinkedin size="2em" /> } url="https://www.linkedin.com/in/amabella-aguiluz" />
+      <ButtonIconOnlyLink icon={ <MdEmail size="2em" /> } url="mailto: amabellaaguiluz1@gmail.com" /> 
+      </div>
+  )
+}
+
 
 function Experience({text}){
   return(
@@ -159,7 +182,7 @@ function Experience({text}){
       <H2Text text="Experience" />
       <H1Text text="Freelancer (2020-Present)" />
         <RegularText text="Worked on various projects revolving illustration." />
-      <H1Text text="Software Engineering Intern (FullSuite) (2025-Present)" />
+      <H1Text text="Software Engineering Intern - FullSuite (2025-Present)" />
         <RegularText text="Developing and maintaining web apps." />
     </div>
   )}
@@ -175,6 +198,8 @@ function Profile({text}){
         <H1Text text="AMA Computer College Baguio (2024-Present)" />
         <RegularText text="B.S. Computer Science" />
         <Experience />
+        <H1Text text="Contact Me" />
+        <ContactMeRow />
       </div>
     </div>
   )
@@ -184,16 +209,17 @@ function Skillset({text}){
   return(
     <div>
     <H2Text text = "My Skillset"/>
-    <div className="grid grid-cols-20 gap-1 bg-white p-4 rounded shadow w-auto h-auto">
-      <SkillIcon icon={ <DiReact size="2em" /> } text="React"/>
+    <div className="flex flex-row bg-white gap-4 p-4 rounded shadow w-auto h-auto">
       <SkillIcon icon={ <FaFigma size="2em" /> } text="Figma"/>
+      <SkillIcon icon={ <DiReact size="2em" /> } text="React"/>
+      <SkillIcon icon={ <RiTailwindCssFill size="2em" /> } text="TailwindCSS"/>
       <SkillIcon icon={ <IoLogoElectron size="2em" /> } text="ElectronJS"/>
       <SkillIcon icon={ <DiPython size="2em" /> } text="Python"/>
-      <SkillIcon icon={ <SiScrapy size="2em" /> } text="Scrapy"/>      
+      <SkillIcon icon={ <SiScrapy size="2em" /> } text="Scrapy"/>    
+      <SkillIcon icon={ <SiSqlite size="2em" /> } text="SQLite"/>  
       <SkillIcon icon={ <DiGit size="2em" /> } text="Git"/>
-      <SkillIcon icon={ <SiSqlite size="2em" /> } text="SQLite"/>
       <SkillIcon icon={ <SiGnubash size="2em" /> } text="UNIX / Bash"/>
-    </div>/
+    </div>
     </div>
   )
 }
@@ -201,41 +227,29 @@ function Skillset({text}){
 function PortfolioSet({text}){
   return(
     <div>
-      <PortfolioSample title="Spinagotchi" imageSrc={null} skils="React, TailwindCSS, ElectronJS" description="A desktop tamagotchi" githubUrl="" />
-      <PortfolioSample title="Angela_Bot" imageSrc={null} skills="Python, SQLite" description="A general-use Discord bot based off of Angela from Lobotomy Corporation" githubUrl="" />
-      <PortfolioSample title="GigBytes" imageSrc={null} skills="Figma" description="A UI/UX mockup for an app where you can find local gigs anywhere" githubUrl="" />
+      <PortfolioSample title="Spinagotchi"
+        imageSrc={null}
+        skills="React, TailwindCSS, ElectronJS" 
+        description="A desktop tamagotchi"
+        githubUrl="" />
+      <PortfolioSample title="Angela_Bot"
+        imageSrc={null}
+          skills="Python, SQLite"
+          description="A general-use Discord bot based off of Angela from Lobotomy Corporation"
+          githubUrl="" />
+      <PortfolioSample title="GigBytes"
+        imageSrc={null}
+        skills="Figma"
+        description="A UI/UX mockup for an app where you can find local gigs anywhere."
+        githubUrl="" />
     </div>)
 }
-
-// assets: 
-//   !text box 
-//   !wide image 
-//   !portrait image 
-//   text box (front) + wide image 
-
-// about me:
-  // !portrait + text
-  // !about me - bio
-  // !experience
-
-// !skillset
-
-// portfolio:
-  // title
-  // skillset
-  // description
-  // link to github
 
 
 
 function App() {
   return (
     <>
-      {/* <HeaderText header="test header"/>
-      <RegularText text="test" />
-      <ButtonIcon text="Click Me" onClick={() => alert("Button Clicked!")} icon={ <DiGithubBadge size="1.5em"/> } />
-      <ButtonIconLink text="GitHub" url="https://github.com/amabella-aguiluz" icon={ <DiGithubBadge size="1.5em"/> } />
-      <SkillIcon icon={ <DiJavascript size="2em" /> } text="JavaScript"/> */}
     <div className="gap-10">
       <Profile />
       <Skillset />
