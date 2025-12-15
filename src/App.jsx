@@ -1,41 +1,79 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import wide_pic from "./assets/wide.jpg"
+import portrait_pic from "./assets/pfp.jpg"
+
+function HeaderText({header}){
+  return(
+    <div className="w-auto h-auto text-3xl font-bold">
+      {header}
+    </div>
+  )
+}
+
+function RegularText({text}) {
+  return(
+    <div className="w-auto h-auto text-base">
+      {text}
+    </div>
+  )
+}
+
+const test = "test box";
+
+function WideImage({src, alt}){
+  return(
+    <div className="flex w-full h-auto ">
+      <img src={src} alt={alt} className="w-full h-auto"/>
+    </div>
+  )
+}
+
+function PortraitImage({src, alt}){
+  return(
+    <div className="flex w-auto h-auto">
+      <img src={src} alt={alt} className="w-auto h-full"/>
+    </div>
+  )
+}
+
+
 
 // assets: 
-//   text box 
-//   wide image 
-//   portrait image
+//   text box !
+//   wide image !
+//   portrait image !
 //   text box (front) + wide image 
+
+// about me:
+  // portrait
+  // text
+  // about me - bio
+  // experience
+
+// skillset:
+  // icon
+  // text box
+
+// portfolio:
+  // title
+  // skillset
+  // description
+  // link to github
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <HeaderText header="test header"/>
+      <RegularText text="test" />
+      <div className="text-base">base text</div>
+<div className="text-3xl font-bold">3xl header</div>
+<div className="text-5xl font-bold">5xl header</div>
+
+      {/* <WideImage src={wide_pic} alt='wide image'/>
+      <PortraitImage src={portrait_pic} alt='portrait image'/> */}
     </>
   )
 }
