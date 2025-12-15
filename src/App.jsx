@@ -137,7 +137,7 @@ function H3WithText({header, text}){
 
 function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div className="flex p-4 rounded-2xl  shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] flex-col w-auto h-auto gap-2">
+    <div className="flex p-4 border-2 border-[#850E35] rounded-2xl flex-col w-auto h-auto gap-2">
       <H2Text text={title}/>
       <RegularText text={skills} className="italic" />
       <RegularText text={description} />
@@ -175,7 +175,7 @@ function Experience({text}){
 
 function Profile({text}){
   return(
-    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] w-full h-auto gap-5">
+    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl border-2 border-[#850E35] w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
@@ -200,7 +200,7 @@ function Skillset({text}){
     <div>
     <H2Text text = "My Skillset"/>
     <br />
-    <div className="flex flex-wrap gap-2 p-4 rounded-2xl shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] w-auto h-auto">
+    <div className="flex flex-wrap border-2 border-[#850E35] gap-2 p-4 rounded-2xl  w-auto h-auto">
       <SkillIcon icon={ <FaFigma className="text-[#FFC4C4]" size="2em" /> } text="Figma"/>
       <SkillIcon icon={ <DiReact className="text-[#FFC4C4]" size="2em" /> } text="React"/>
       <SkillIcon icon={ <RiTailwindCssFill className="text-[#FFC4C4]" size="2em" /> } text="TailwindCSS"/>
