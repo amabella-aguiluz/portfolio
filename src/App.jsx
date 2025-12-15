@@ -3,6 +3,11 @@ import './App.css'
 import large_pic from "./assets/wide.jpg"
 import portrait_pic from "./assets/pfp.jpg"
 
+// links
+const email = "amabellaaguiluz1@gmail.com";
+const linkedin = "https://www.linkedin.com/in/amabella-aguiluz";
+const github = "https://github.com/amabella-aguiluz";
+
 // contact icons
 import { DiGithubBadge } from "react-icons/di";
 import { FaLinkedin } from "react-icons/fa";
@@ -31,15 +36,17 @@ const colors = {
     // text components
 function H3Text({header}){
   return(
-    <div className="w-auto h-auto text-3xl font-bold">
+    <div className="w-auto h-auto text-3xl font-bold. text-[#FCF5EE]">
       {header}
     </div>
   )
 }
 
+
+
 function H2Text({text}){
   return(
-    <div className="w-auto h-auto text-2xl font-semibold">
+    <div className="w-auto h-auto text-2xl font-semibold text-[#FCF5EE]">
       {text}
     </div>
   )
@@ -47,20 +54,19 @@ function H2Text({text}){
 
 function H1Text({text}){
   return(
-    <div className="w-auto h-auto text-xl font-semibold">
+    <div className="w-auto h-auto text-xl font-semibold text-[#FCF5EE]">
       {text}
     </div>
   )
 }
 
-function RegularText({text}) {
-  return(
-    <div className="w-auto h-auto text-base">
+function RegularText({ text, className = "" }) {
+  return (
+    <p className={`w-auto h-auto text-[#FFC4C4] text-base ${className}`}>
       {text}
-    </div>
-  )
+    </p>
+  );
 }
-
 
   // image components
 function WideImage({src, alt}){
@@ -73,20 +79,13 @@ function WideImage({src, alt}){
 
 function PortraitImage({src, alt}){
   return(
-    <div className="flex w-auto h-auto">
+    <div className="flex w-auto h-auto items-center">
       <img src={src} alt={alt} className="w-auto max-h-[200px] rounded-3xl"/>
     </div>
   )}
 
 
     // buton components
-function ButtonIcon({text, onClick, icon}){
-  return(
-    <button onClick={onClick} className="px-4 py-2 bg-blue-500 text-white rounded flex items-center gap-2">
-      {icon}{text}
-    </button>
-  )
-}
 function ButtonIconOnlyLink({url, icon}){
   const click= () => {
   window.open(url, "_blank");
@@ -104,25 +103,16 @@ function ButtonIconLink({text,url, icon}){
   window.open(url, "_blank");
   };
   return(
-    <button onClick={click} className="px-4 py-2 bg-gray-800 text-white rounded flex items-center gap-2 hover:bg-gray-700">
+    <button onClick={click} className=" self-start px-4 py-2 bg-[#EE6983] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#FFC4C4]">
       {icon}{text}
     </button>
   )
 }
-
-function Button({text, onClick}){
-  return(
-    <button onClick={onClick} className="px-1 py-1 bg-blue-500 text-white rounded">
-      {text}
-    </button>
-  )
-}
-
 function SkillIcon({icon, text}){
   return(
-    <div className="flex flex-col items-center bg-white p-4 rounded-2xl shadow w-[100px] h-[120px]">
+    <div className="flex flex-col items-center p-4 rounded-2xl w-[100px] h-[100px]">
       {icon}
-      <div className="text-sm mt-2">{text}</div>
+      <div className="text-sm mt-2 text-[#FFC4C4]">{text}</div>
     </div>
   );
 }
@@ -145,33 +135,29 @@ function H3WithText({header, text}){
   )
 }
 
-function PortfolioSample({title, imageSrc, skills, description, githubUrl}){
+function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div>
+    <div className="flex p-4 rounded-2xl  shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] flex-col w-auto h-auto gap-2">
       <H2Text text={title}/>
-      <WideImage src={imageSrc} alt="Project Image" />
-      <RegularText text={skills} />
+      <RegularText text={skills} className="italic" />
       <RegularText text={description} />
-      <ButtonIconLink text="View on GitHub" url={githubUrl} icon={ <DiGithubBadge size="1.5em"/> } />
+      <ButtonIconLink text="View on GitHub" url={githubUrl} icon={ <DiGithubBadge size="1.5em"/> }
+      className="w-fit" />
       </div>)
 }
 
   // about me components
-function Bio(text){
-  return(
-    <div className="flex flex-col">
-      <RegularText text="I'm a junior developer with a passion for creativity and learning new things everyday."/>
-    </div>
-  )
-}
 
 function ContactMeRow({text}){
   return(
+    <div className="flex flex-col items-center">
+      <H1Text text="Contact Me" />
     <div className="flex flex-row">
-      <ButtonIconOnlyLink icon={ <DiGithubBadge size="2em" /> } url="https://github.com/amabella-aguiluz" />
-      <ButtonIconOnlyLink icon={ <FaLinkedin size="2em" /> } url="https://www.linkedin.com/in/amabella-aguiluz" />
-      <ButtonIconOnlyLink icon={ <MdEmail size="2em" /> } url="mailto: amabellaaguiluz1@gmail.com" /> 
+      <ButtonIconOnlyLink icon={ <DiGithubBadge className="text-[#FFC4C4]" size="2em" /> } url={github} />
+      <ButtonIconOnlyLink icon={ <FaLinkedin className="text-[#FFC4C4]" size="2em" /> } url={linkedin} />
+      <ButtonIconOnlyLink icon={ <MdEmail className="text-[#FFC4C4]" size="2em" /> } url={'mailto:${email}'} /> 
       </div>
+    </div>
   )
 }
 
@@ -189,16 +175,20 @@ function Experience({text}){
 
 function Profile({text}){
   return(
-    <div className="flex items-center bg-white p-4 rounded shadow w-auto h-auto gap-5">
-      <PortraitImage src={portrait_pic} alt="Profile Picture" />
+    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] w-full h-auto gap-5">
+      <div className='flex-shrink-0'>
+        <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
+      </div>
       <div>
         <H3WithH2 header="Amabella Aguiluz" text="Developer" />
-        <Bio />
+        <RegularText text="I'm a junior developer with a passion for creativity and learning new things everyday."/>
+        <br />
         <H2Text text="Schooling" />
         <H1Text text="AMA Computer College Baguio (2024-Present)" />
         <RegularText text="B.S. Computer Science" />
+        <br />
         <Experience />
-        <H1Text text="Contact Me" />
+        <br />
         <ContactMeRow />
       </div>
     </div>
@@ -209,16 +199,17 @@ function Skillset({text}){
   return(
     <div>
     <H2Text text = "My Skillset"/>
-    <div className="flex flex-row bg-white gap-4 p-4 rounded shadow w-auto h-auto">
-      <SkillIcon icon={ <FaFigma size="2em" /> } text="Figma"/>
-      <SkillIcon icon={ <DiReact size="2em" /> } text="React"/>
-      <SkillIcon icon={ <RiTailwindCssFill size="2em" /> } text="TailwindCSS"/>
-      <SkillIcon icon={ <IoLogoElectron size="2em" /> } text="ElectronJS"/>
-      <SkillIcon icon={ <DiPython size="2em" /> } text="Python"/>
-      <SkillIcon icon={ <SiScrapy size="2em" /> } text="Scrapy"/>    
-      <SkillIcon icon={ <SiSqlite size="2em" /> } text="SQLite"/>  
-      <SkillIcon icon={ <DiGit size="2em" /> } text="Git"/>
-      <SkillIcon icon={ <SiGnubash size="2em" /> } text="UNIX / Bash"/>
+    <br />
+    <div className="flex flex-wrap gap-2 p-4 rounded-2xl shadow-[4px_4px_10px_2px_rgba(133,14,53,0.5)] w-auto h-auto">
+      <SkillIcon icon={ <FaFigma className="text-[#FFC4C4]" size="2em" /> } text="Figma"/>
+      <SkillIcon icon={ <DiReact className="text-[#FFC4C4]" size="2em" /> } text="React"/>
+      <SkillIcon icon={ <RiTailwindCssFill className="text-[#FFC4C4]" size="2em" /> } text="TailwindCSS"/>
+      <SkillIcon icon={ <IoLogoElectron className="text-[#FFC4C4]" size="2em" /> } text="ElectronJS"/>
+      <SkillIcon icon={ <DiPython className="text-[#FFC4C4]" size="2em" /> } text="Python"/>
+      <SkillIcon icon={ <SiScrapy className="text-[#FFC4C4]" size="2em" /> } text="Scrapy"/>    
+      <SkillIcon icon={ <SiSqlite className="text-[#FFC4C4]" size="2em" /> } text="SQLite"/>  
+      <SkillIcon icon={ <DiGit className="text-[#FFC4C4]" size="2em" /> } text="Git"/>
+      <SkillIcon icon={ <SiGnubash className="text-[#FFC4C4]" size="2em" /> } text="UNIX / Bash"/>
     </div>
     </div>
   )
@@ -228,21 +219,21 @@ function PortfolioSet({text}){
   return(
     <div>
       <PortfolioSample title="Spinagotchi"
-        imageSrc={null}
         skills="React, TailwindCSS, ElectronJS" 
         description="A desktop tamagotchi"
         githubUrl="" />
+        <br />
       <PortfolioSample title="Angela_Bot"
-        imageSrc={null}
           skills="Python, SQLite"
           description="A general-use Discord bot based off of Angela from Lobotomy Corporation"
-          githubUrl="" />
+          githubUrl="https://github.com/amabella-aguiluz/angela-bot" />
+          <br />
       <PortfolioSample title="GigBytes"
-        imageSrc={null}
         skills="Figma"
         description="A UI/UX mockup for an app where you can find local gigs anywhere."
         githubUrl="" />
-    </div>)
+    </div>
+  )
 }
 
 
@@ -250,7 +241,7 @@ function PortfolioSet({text}){
 function App() {
   return (
     <>
-    <div className="gap-10">
+    <div className="gap-10 max-w-3xl mx-auto px-6 flex flex-col py-10">
       <Profile />
       <Skillset />
       <PortfolioSet />
