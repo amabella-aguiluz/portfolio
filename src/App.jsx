@@ -36,7 +36,7 @@ const colors = {
     // text components
 function H3Text({header}){
   return(
-    <div className="w-auto h-auto text-3xl font-bold. text-[#FCF5EE]">
+    <div className="w-auto h-auto text-3xl font-bold. text-[#850E35]">
       {header}
     </div>
   )
@@ -46,7 +46,7 @@ function H3Text({header}){
 
 function H2Text({text}){
   return(
-    <div className="w-auto h-auto text-2xl font-semibold text-[#FCF5EE]">
+    <div className="w-auto h-auto text-2xl font-semibold text-[#850E35]">
       {text}
     </div>
   )
@@ -54,7 +54,7 @@ function H2Text({text}){
 
 function H1Text({text}){
   return(
-    <div className="w-auto h-auto text-xl font-semibold text-[#FCF5EE]">
+    <div className="w-auto h-auto text-xl font-semibold text-[#850E35]">
       {text}
     </div>
   )
@@ -62,7 +62,7 @@ function H1Text({text}){
 
 function RegularText({ text, className = "" }) {
   return (
-    <p className={`w-auto h-auto text-[#FFC4C4] text-base ${className}`}>
+    <p className={`w-auto h-auto text-[#EE6983] text-base ${className}`}>
       {text}
     </p>
   );
@@ -103,7 +103,7 @@ function ButtonIconLink({text,url, icon}){
   window.open(url, "_blank");
   };
   return(
-    <button onClick={click} className=" self-start px-4 py-2 bg-[#850E35] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#EE6983]">
+    <button onClick={click} className=" self-start px-4 py-2 bg-[#EE6983] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#FFC4C4]">
       {icon}{text}
     </button>
   )
@@ -112,7 +112,7 @@ function SkillIcon({icon, text}){
   return(
     <div className="flex flex-col items-center p-4 rounded-2xl w-[100px] h-[100px]">
       {icon}
-      <div className="text-sm mt-2 text-[#FFC4C4]">{text}</div>
+      <div className="text-sm mt-2 text-[#EE6983]">{text}</div>
     </div>
   );
 }
@@ -137,7 +137,7 @@ function H3WithText({header, text}){
 
 function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div className="flex p-4 border-2 border-[#850E35] rounded-2xl flex-col w-auto h-auto gap-2">
+    <div className="flex p-4 border-2 border-[#EE6983] rounded-2xl flex-col w-auto h-auto gap-2">
       <H2Text text={title}/>
       <RegularText text={skills} className="italic" />
       <RegularText text={description} />
@@ -153,9 +153,9 @@ function ContactMeRow({text}){
     <div className="flex flex-col items-center">
       <H1Text text="Contact Me" />
     <div className="flex flex-row">
-      <ButtonIconOnlyLink icon={ <DiGithubBadge className="text-[#FFC4C4]" size="2em" /> } url={github} />
-      <ButtonIconOnlyLink icon={ <FaLinkedin className="text-[#FFC4C4]" size="2em" /> } url={linkedin} />
-      <ButtonIconOnlyLink icon={ <MdEmail className="text-[#FFC4C4]" size="2em" /> } url={'mailto:${email}'} /> 
+      <ButtonIconOnlyLink icon={ <DiGithubBadge className="text-[#EE6983]" size="2em" /> } url={github} />
+      <ButtonIconOnlyLink icon={ <FaLinkedin className="text-[#EE6983]" size="2em" /> } url={linkedin} />
+      <ButtonIconOnlyLink icon={ <MdEmail className="text-[#EE6983]" size="2em" /> } url={'mailto:${email}'} /> 
       </div>
     </div>
   )
@@ -175,7 +175,7 @@ function Experience({text}){
 
 function Profile({text}){
   return(
-    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl border-2 border-[#850E35] w-full h-auto gap-5">
+    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl border-2 border-[#EE6983] w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
@@ -200,16 +200,16 @@ function Skillset({text}){
     <div>
     <H2Text text = "My Skillset"/>
     <br />
-    <div className="flex flex-wrap border-2 border-[#850E35] gap-2 p-4 rounded-2xl  w-auto h-auto">
-      <SkillIcon icon={ <FaFigma className="text-[#FFC4C4]" size="2em" /> } text="Figma"/>
-      <SkillIcon icon={ <DiReact className="text-[#FFC4C4]" size="2em" /> } text="React"/>
-      <SkillIcon icon={ <RiTailwindCssFill className="text-[#FFC4C4]" size="2em" /> } text="TailwindCSS"/>
-      <SkillIcon icon={ <IoLogoElectron className="text-[#FFC4C4]" size="2em" /> } text="ElectronJS"/>
-      <SkillIcon icon={ <DiPython className="text-[#FFC4C4]" size="2em" /> } text="Python"/>
-      <SkillIcon icon={ <SiScrapy className="text-[#FFC4C4]" size="2em" /> } text="Scrapy"/>    
-      <SkillIcon icon={ <SiSqlite className="text-[#FFC4C4]" size="2em" /> } text="SQLite"/>  
-      <SkillIcon icon={ <DiGit className="text-[#FFC4C4]" size="2em" /> } text="Git"/>
-      <SkillIcon icon={ <SiGnubash className="text-[#FFC4C4]" size="2em" /> } text="UNIX / Bash"/>
+    <div className="flex flex-wrap border-2 border-[#EE6983] gap-2 p-4 rounded-2xl  w-auto h-auto">
+      <SkillIcon icon={ <FaFigma className="text-[#EE6983]" size="2em" /> } text="Figma"/>
+      <SkillIcon icon={ <DiReact className="text-[#EE6983]" size="2em" /> } text="React"/>
+      <SkillIcon icon={ <RiTailwindCssFill className="text-[#EE6983]" size="2em" /> } text="TailwindCSS"/>
+      <SkillIcon icon={ <IoLogoElectron className="text-[#EE6983]" size="2em" /> } text="ElectronJS"/>
+      <SkillIcon icon={ <DiPython className="text-[#EE6983]" size="2em" /> } text="Python"/>
+      <SkillIcon icon={ <SiScrapy className="text-[#EE6983]" size="2em" /> } text="Scrapy"/>    
+      <SkillIcon icon={ <SiSqlite className="text-[#EE6983]" size="2em" /> } text="SQLite"/>  
+      <SkillIcon icon={ <DiGit className="text-[#EE6983]" size="2em" /> } text="Git"/>
+      <SkillIcon icon={ <SiGnubash className="text-[#EE6983]" size="2em" /> } text="UNIX / Bash"/>
     </div>
     </div>
   )
