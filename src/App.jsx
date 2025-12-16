@@ -103,7 +103,7 @@ function ButtonIconLink({text,url, icon}){
   window.open(url, "_blank");
   };
   return(
-    <button onClick={click} className=" self-start px-4 py-2 bg-[#EE6983] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#FFC4C4]">
+    <button onClick={click} className=" self-start px-4 py-2 bg-[#850E35] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#EE6983]">
       {icon}{text}
     </button>
   )
