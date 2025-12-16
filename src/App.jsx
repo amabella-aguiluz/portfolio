@@ -64,9 +64,9 @@ function ButtonIconLink({text,url, icon}){
 }
 function SkillIcon({icon, text}){
   return(
-    <div className="flexcol lightborder items-center p-4 rounded-2xl w-[100px] h-[100px]">
+    <div className="flexcol lightborder items-center p-4 rounded-2xl w-[100px] h-[100px] gap-2">
       {icon}
-      <div className="text-sm mt-2 text-[#EE6983]">{text}</div>
+      <div className="text-[#EE6983]">{text}</div>
     </div>
   );
 }
@@ -143,7 +143,7 @@ function Skillset({}){
     <div>
     <h2>My Skillset</h2>
     <br />
-    <div className="flex flex-wrap gap-2 p-4 rounded-2xl w-auto h-auto justify-center md:justify-start">
+    <div className="flex flex-wrap gap-2 p-4 rounded-2xl w-auto h-auto justify-evenly md:justify-start">
       <SkillIcon icon={ <FaFigma className="logos" /> } text="Figma"/>
       <SkillIcon icon={ <DiReact className="logos" /> } text="React"/>
       <SkillIcon icon={ <RiTailwindCssFill className="logos" /> } text="Tailwind"/>
