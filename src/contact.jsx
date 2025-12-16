@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
- const serviceId = service_10v1tjq
+ const serviceId = service_10v1tjq;
  const templateId = template_omfro4h;
  const publicKey = k4gzPCvIIUGBXUTZJ;
 
