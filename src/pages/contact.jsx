@@ -1,30 +1,9 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
- const serviceId = "service_10v1tjq";
- const templateId = "template_omfro4h";
- const publicKey = "k4gzPCvIIUGBXUTZJ";
+import Contact from '../hooks/contact.js';
 
 
 export const ContactUs = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(serviceId, templateId, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
 
   return (
   <div className="flexcol flex-wrap w-auto h-auto w-full mx-auto">
