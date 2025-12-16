@@ -21,7 +21,7 @@ h1 {
   font-size: 2rem
 }
 
-h2, h3 {
+h2, h3, label {
   font-weight: 600;
   color: #850E35;
 }
@@ -38,6 +38,19 @@ p {
   color: #EE6983;
 }
 
-.lightborder {
+input, textarea {
+  @apply text-[#EE6983] rounded-xl gap-2 m-2 p-4 w-full flex shrink focus:outline-[#EE6983]
+}
+
+
+.lightborder, input {
   @apply border-2 border-[#FFC4C4]
+}
+
+.flexcol {
+  @apply flex flex-col flex-wrap
+}
+
+.buttoncolor{
+  @apply bg-[#EE6983] text-[#FCF5EE]
 }

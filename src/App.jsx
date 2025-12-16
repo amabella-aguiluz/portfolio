@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import large_pic from "./assets/wide.jpg"
 import portrait_pic from "./assets/pfp.jpg"
+import ContactUs from './contact.jsx'
 
 // links
 const email = "amabellaaguiluz1@gmail.com";
@@ -11,11 +11,9 @@ const github = "https://github.com/amabella-aguiluz";
 // contact icons
 import { DiGithubBadge } from "react-icons/di";
 import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 
 // skillset icons
 import { DiGit } from "react-icons/di";
-import { DiJavascript } from "react-icons/di";
 import { DiPython } from "react-icons/di";
 import { DiReact } from "react-icons/di";
 import { SiSqlite } from "react-icons/si";
@@ -59,14 +57,14 @@ function ButtonIconLink({text,url, icon}){
   window.open(url, "_blank");
   };
   return(
-    <button onClick={click} className=" self-start px-4 py-2 bg-[#EE6983] text-[#FCF5EE] rounded flex items-center gap-2 hover:bg-[#FFC4C4]">
+    <button onClick={click} className=" self-start px-4 py-2 buttoncolor rounded-xl flex items-center gap-2 hover:bg-[#FFC4C4]">
       {icon}{text}
     </button>
   )
 }
 function SkillIcon({icon, text}){
   return(
-    <div className="flex flex-col lightborder items-center p-4 rounded-2xl w-[100px] h-[100px]">
+    <div className="flexcol lightborder items-center p-4 rounded-2xl w-[100px] h-[100px]">
       {icon}
       <div className="text-sm mt-2 text-[#EE6983]">{text}</div>
     </div>
@@ -76,7 +74,7 @@ function SkillIcon({icon, text}){
 
 function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div className="flex p-4 px-6 rounded-2xl lightborder flex-col w-auto h-auto gap-2">
+    <div className="flex p-4 px-6 rounded-2xl lightborder flex-col w-full max-w-xs h-auto gap-2">
       <h2>{title}</h2>
       <p><i>{skills}</i></p>
       <p>{description}</p>
@@ -85,21 +83,28 @@ function PortfolioSample({title, skills, description, githubUrl}){
       </div>)
 }
 
+
   // about me components
 
-function ContactMeRow({text}){
+function ContactMeRow({}){
   return(
-    <div className="flex flex-col">
-      <h3>Contact Me</h3>
+    <div className="flexcol">
     <div className="flex flex-row">
       <ButtonIconOnlyLink icon={ <DiGithubBadge className="logos" /> } url={github} />
       <ButtonIconOnlyLink icon={ <FaLinkedin className="logos" /> } url={linkedin} />
-      <ButtonIconOnlyLink icon={ <MdEmail className="logos" /> } url={'mailto:${email}'} /> 
       </div>
     </div>
   )
 }
 
+function ContactMeAll({}){
+  return(
+  <div className="flexcol w-full h-auto gap-4">
+    <div className="flex flex-row justify-between items-center gap-5"><h2>Contact Me</h2> <ContactMeRow className="self-end"/></div>
+<div><ContactUs /></div>
+</div>
+  )
+}
 
 function Experience({}){
   return(
@@ -114,7 +119,7 @@ function Experience({}){
 
 function Profile({}){
   return(
-    <div className="flex flex-col md:flex-row p-4 rounded-2xl w-full h-auto gap-5">
+    <div className="flex flex-row flex-wrap p-4 rounded-2xl w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
@@ -128,8 +133,6 @@ function Profile({}){
         <p>B.S. Computer Science</p>
         <br />
         <Experience />
-        <br />
-        <ContactMeRow />
       </div>
     </div>
   )
@@ -140,16 +143,16 @@ function Skillset({}){
     <div>
     <h2>My Skillset</h2>
     <br />
-    <div className="flex flex-wrap gap-2 p-4 rounded-2xl  w-auto h-auto">
+    <div className="flex flex-wrap gap-2 p-4 rounded-2xl w-auto h-auto justify-center md:justify-start">
       <SkillIcon icon={ <FaFigma className="logos" /> } text="Figma"/>
       <SkillIcon icon={ <DiReact className="logos" /> } text="React"/>
-      <SkillIcon icon={ <RiTailwindCssFill className="logos" /> } text="TailwindCSS"/>
-      <SkillIcon icon={ <IoLogoElectron className="logos" /> } text="ElectronJS"/>
+      <SkillIcon icon={ <RiTailwindCssFill className="logos" /> } text="Tailwind"/>
+      <SkillIcon icon={ <IoLogoElectron className="logos" /> } text="Electron"/>
       <SkillIcon icon={ <DiPython className="logos" /> } text="Python"/>
       <SkillIcon icon={ <SiScrapy className="logos" /> } text="Scrapy"/>    
       <SkillIcon icon={ <SiSqlite className="logos" /> } text="SQLite"/>  
       <SkillIcon icon={ <DiGit className="logos" /> } text="Git"/>
-      <SkillIcon icon={ <SiGnubash className="logos" /> } text="UNIX / Bash"/>
+      <SkillIcon icon={ <SiGnubash className="logos" /> } text="Bash"/>
     </div>
     </div>
   )
@@ -157,7 +160,7 @@ function Skillset({}){
 
 function PortfolioSet({}){
   return(
-    <div className="flex flex-row gap-4 flex-wrap">
+    <div className="flex flex-row justify-around gap-2 flex-wrap">
       <PortfolioSample title="Spinagotchi"
         skills="React, TailwindCSS, ElectronJS" 
         description="A desktop tamagotchi."
@@ -181,10 +184,11 @@ function PortfolioSet({}){
 function App() {
   return (
     <>
-    <div className="min-h-screen gap-10 max-w-5xl px-6 flex flex-col py-10 mx-auto items-center">
+    <div className="min-h-screen gap-10 max-w-4xl px-6 flexcol py-10 mx-auto items-center">
       <Profile />
       <Skillset />
       <PortfolioSet />
+      <ContactMeAll />
       </div>
     </>
   )
