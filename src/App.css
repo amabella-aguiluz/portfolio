@@ -8,3 +8,36 @@
 body {
   @apply bg-[#FCF5EE];
 }
+
+.logos {
+  @apply text-[#EE6983];
+  height: 2em;
+  width: 2em;
+}
+
+h1 {
+  font-weight: bold;
+  color: #850E35;
+  font-size: 2rem
+}
+
+h2, h3 {
+  font-weight: 600;
+  color: #850E35;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3{
+  font-size: 1.25rem;
+}
+
+p {
+  color: #EE6983;
+}
+
+.lightborder {
+  @apply border-2 border-[#FFC4C4]
+}

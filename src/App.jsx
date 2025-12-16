@@ -33,50 +33,6 @@ const colors = {
     dark: "#850E35",};
 
 
-    // text components
-function H3Text({header}){
-  return(
-    <div className="w-auto h-auto text-3xl font-bold. text-[#850E35]">
-      {header}
-    </div>
-  )
-}
-
-
-
-function H2Text({text}){
-  return(
-    <div className="w-auto h-auto text-2xl font-semibold text-[#850E35]">
-      {text}
-    </div>
-  )
-}
-
-function H1Text({text}){
-  return(
-    <div className="w-auto h-auto text-xl font-semibold text-[#850E35]">
-      {text}
-    </div>
-  )
-}
-
-function RegularText({ text, className = "" }) {
-  return (
-    <p className={`w-auto h-auto text-[#EE6983] text-base ${className}`}>
-      {text}
-    </p>
-  );
-}
-
-  // image components
-function WideImage({src, alt}){
-  return(
-    <div className="flex w-full h-auto ">
-      <img src={src} alt={alt} className="max-w-[200px] w-auto h-auto"/>
-    </div>
-  )
-}
-
 function PortraitImage({src, alt}){
   return(
     <div className="flex w-auto h-auto items-center">
@@ -110,37 +66,20 @@ function ButtonIconLink({text,url, icon}){
 }
 function SkillIcon({icon, text}){
   return(
-    <div className="flex flex-col items-center p-4 rounded-2xl w-[100px] h-[100px]">
+    <div className="flex flex-col lightborder items-center p-4 rounded-2xl w-[100px] h-[100px]">
       {icon}
       <div className="text-sm mt-2 text-[#EE6983]">{text}</div>
     </div>
   );
 }
 
-function H3WithH2({header, text}){
-  return(
-    <div className="flex flex-col w-auto h-auto">
-      <H3Text header={header} />
-      <H2Text text={text} />
-    </div>
-  )
-}
-
-function H3WithText({header, text}){
-  return(
-    <div className="flex flex-col w-auto h-auto">
-      <H3Text header={header} />
-      <RegularText text={text} />
-    </div>
-  )
-}
 
 function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div className="flex p-4 border-2 border-[#EE6983] rounded-2xl flex-col w-auto h-auto gap-2">
-      <H2Text text={title}/>
-      <RegularText text={skills} className="italic" />
-      <RegularText text={description} />
+    <div className="flex p-4 rounded-2xl lightborder flex-col w-auto h-auto gap-2">
+      <h2>{title}</h2>
+      <p><i>{skills}</i></p>
+      <p>{description}</p>
       <ButtonIconLink text="View on GitHub" url={githubUrl} icon={ <DiGithubBadge size="1.5em"/> }
       className="w-fit" />
       </div>)
@@ -151,41 +90,42 @@ function PortfolioSample({title, skills, description, githubUrl}){
 function ContactMeRow({text}){
   return(
     <div className="flex flex-col items-center">
-      <H1Text text="Contact Me" />
+      <h3>Contact Me</h3>
     <div className="flex flex-row">
-      <ButtonIconOnlyLink icon={ <DiGithubBadge className="text-[#EE6983]" size="2em" /> } url={github} />
-      <ButtonIconOnlyLink icon={ <FaLinkedin className="text-[#EE6983]" size="2em" /> } url={linkedin} />
-      <ButtonIconOnlyLink icon={ <MdEmail className="text-[#EE6983]" size="2em" /> } url={'mailto:${email}'} /> 
+      <ButtonIconOnlyLink icon={ <DiGithubBadge className="logos" /> } url={github} />
+      <ButtonIconOnlyLink icon={ <FaLinkedin className="logos" /> } url={linkedin} />
+      <ButtonIconOnlyLink icon={ <MdEmail className="logos" /> } url={'mailto:${email}'} /> 
       </div>
     </div>
   )
 }
 
 
-function Experience({text}){
+function Experience({}){
   return(
     <div>
-      <H2Text text="Experience" />
-      <H1Text text="Freelancer (2020-Present)" />
-        <RegularText text="Worked on various projects revolving illustration." />
-      <H1Text text="Software Engineering Intern - FullSuite (2025-Present)" />
-        <RegularText text="Developing and maintaining web apps." />
+      <h2>Experience</h2>
+      <h3>Freelancer (2020-Present)</h3>
+        <p>Worked on various projects revolving illustration.</p>
+      <h3>Software Engineering Intern - FullSuite (2025-Present)</h3>
+        <p>Developing and maintaining web apps.</p> 
     </div>
   )}
 
-function Profile({text}){
+function Profile({}){
   return(
-    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl border-2 border-[#EE6983] w-full h-auto gap-5">
+    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
       <div>
-        <H3WithH2 header="Amabella Aguiluz" text="Developer" />
-        <RegularText text="I'm a junior developer with a passion for creativity and learning new things everyday."/>
+        <h1> Amabella Aguiluz</h1>
+        <h2> Web Developer </h2>
+        <p>I'm a junior developer with a passion for creativity and learning new things everyday.</p>
         <br />
-        <H2Text text="Schooling" />
-        <H1Text text="AMA Computer College Baguio (2024-Present)" />
-        <RegularText text="B.S. Computer Science" />
+        <h2>Schooling</h2>
+        <h3>AMA Computer College Baguio (2024-Present)</h3>
+        <p>B.S. Computer Science</p>
         <br />
         <Experience />
         <br />
@@ -195,27 +135,27 @@ function Profile({text}){
   )
 }
 
-function Skillset({text}){
+function Skillset({}){
   return(
     <div>
-    <H2Text text = "My Skillset"/>
+    <h2>My Skillset</h2>
     <br />
-    <div className="flex flex-wrap border-2 border-[#EE6983] gap-2 p-4 rounded-2xl  w-auto h-auto">
-      <SkillIcon icon={ <FaFigma className="text-[#EE6983]" size="2em" /> } text="Figma"/>
-      <SkillIcon icon={ <DiReact className="text-[#EE6983]" size="2em" /> } text="React"/>
-      <SkillIcon icon={ <RiTailwindCssFill className="text-[#EE6983]" size="2em" /> } text="TailwindCSS"/>
-      <SkillIcon icon={ <IoLogoElectron className="text-[#EE6983]" size="2em" /> } text="ElectronJS"/>
-      <SkillIcon icon={ <DiPython className="text-[#EE6983]" size="2em" /> } text="Python"/>
-      <SkillIcon icon={ <SiScrapy className="text-[#EE6983]" size="2em" /> } text="Scrapy"/>    
-      <SkillIcon icon={ <SiSqlite className="text-[#EE6983]" size="2em" /> } text="SQLite"/>  
-      <SkillIcon icon={ <DiGit className="text-[#EE6983]" size="2em" /> } text="Git"/>
-      <SkillIcon icon={ <SiGnubash className="text-[#EE6983]" size="2em" /> } text="UNIX / Bash"/>
+    <div className="flex flex-wrap gap-2 p-4 rounded-2xl  w-auto h-auto">
+      <SkillIcon icon={ <FaFigma className="logos" /> } text="Figma"/>
+      <SkillIcon icon={ <DiReact className="logos" /> } text="React"/>
+      <SkillIcon icon={ <RiTailwindCssFill className="logos" /> } text="TailwindCSS"/>
+      <SkillIcon icon={ <IoLogoElectron className="logos" /> } text="ElectronJS"/>
+      <SkillIcon icon={ <DiPython className="logos" /> } text="Python"/>
+      <SkillIcon icon={ <SiScrapy className="logos" /> } text="Scrapy"/>    
+      <SkillIcon icon={ <SiSqlite className="logos" /> } text="SQLite"/>  
+      <SkillIcon icon={ <DiGit className="logos" /> } text="Git"/>
+      <SkillIcon icon={ <SiGnubash className="logos" /> } text="UNIX / Bash"/>
     </div>
     </div>
   )
 }
 
-function PortfolioSet({text}){
+function PortfolioSet({}){
   return(
     <div>
       <PortfolioSample title="Spinagotchi"
