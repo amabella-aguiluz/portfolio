@@ -220,18 +220,18 @@ function PortfolioSet({text}){
     <div>
       <PortfolioSample title="Spinagotchi"
         skills="React, TailwindCSS, ElectronJS" 
-        description="A desktop tamagotchi"
-        githubUrl="" />
+        description="A desktop tamagotchi."
+        githubUrl="https://github.com/amabella-aguiluz/spinagotchi" />
         <br />
       <PortfolioSample title="Angela_Bot"
           skills="Python, SQLite"
-          description="A general-use Discord bot based off of Angela from Lobotomy Corporation"
+          description="A general-use Discord bot."
           githubUrl="https://github.com/amabella-aguiluz/angela-bot" />
           <br />
       <PortfolioSample title="GigBytes"
         skills="Figma"
         description="A UI/UX mockup for an app where you can find local gigs anywhere."
-        githubUrl="" />
+        githubUrl="https://github.com/amabella-aguiluz/gigbytes_demo" />
     </div>
   )
 }
