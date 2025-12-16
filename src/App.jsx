@@ -76,7 +76,7 @@ function SkillIcon({icon, text}){
 
 function PortfolioSample({title, skills, description, githubUrl}){
   return(
-    <div className="flex p-4 rounded-2xl lightborder flex-col w-auto h-auto gap-2">
+    <div className="flex p-4 px-6 rounded-2xl lightborder flex-col w-auto h-auto gap-2">
       <h2>{title}</h2>
       <p><i>{skills}</i></p>
       <p>{description}</p>
@@ -89,7 +89,7 @@ function PortfolioSample({title, skills, description, githubUrl}){
 
 function ContactMeRow({text}){
   return(
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col">
       <h3>Contact Me</h3>
     <div className="flex flex-row">
       <ButtonIconOnlyLink icon={ <DiGithubBadge className="logos" /> } url={github} />
@@ -114,7 +114,7 @@ function Experience({}){
 
 function Profile({}){
   return(
-    <div className="flex flex-col md:flex-row items-center p-4 rounded-2xl w-full h-auto gap-5">
+    <div className="flex flex-col md:flex-row p-4 rounded-2xl w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
@@ -157,7 +157,7 @@ function Skillset({}){
 
 function PortfolioSet({}){
   return(
-    <div>
+    <div className="flex flex-row gap-4 flex-wrap">
       <PortfolioSample title="Spinagotchi"
         skills="React, TailwindCSS, ElectronJS" 
         description="A desktop tamagotchi."
@@ -181,7 +181,7 @@ function PortfolioSet({}){
 function App() {
   return (
     <>
-    <div className="gap-10 max-w-3xl mx-auto px-6 flex flex-col py-10">
+    <div className="min-h-screen gap-10 max-w-5xl px-6 flex flex-col py-10 mx-auto items-center">
       <Profile />
       <Skillset />
       <PortfolioSet />
