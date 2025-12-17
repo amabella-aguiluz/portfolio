@@ -37,7 +37,7 @@ p {
 }
 
 input, textarea {
-  @apply text-[#EE6983] rounded-xl gap-2 m-2 p-4 w-full flex shrink focus:outline-[#EE6983]
+  @apply text-[#EE6983] rounded-xl gap-2 mt-2 p-3 w-full flex shrink focus:outline-[#EE6983]
 }
 
 
@@ -54,7 +54,7 @@ input, textarea {
 }
 
 .divBg {
-  @apply bg-[#fef8fb] p-5 rounded-2xl;
+  @apply bg-[#fef8fb] p-5 rounded-2xl border-2 border-[#FFC4C4];
 }
 
 
