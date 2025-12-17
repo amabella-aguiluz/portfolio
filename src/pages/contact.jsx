@@ -18,7 +18,7 @@ console.log("PublicKey:", import.meta.env.VITE_PUBLICKEY);
     e.preventDefault();
 
     emailjs
-      .sendForm(serviceId, templateId, form.current,
+      .send(serviceId, templateId, { message: "Hello from Vercel!" },,
         publicKey
       )
       .then(
