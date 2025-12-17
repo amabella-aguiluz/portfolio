@@ -10,6 +10,9 @@ export const ContactUs = () => {
     const form = useRef();
 
     const [sendButton, setSendButton] = useState('Send');
+  console.log("ServiceID:", import.meta.env.VITE_SERVICEID);
+console.log("TemplateID:", import.meta.env.VITE_TEMPLATEID);
+console.log("PublicKey:", import.meta.env.VITE_PUBLICKEY);
 
     const sendEmail = (e) => {
     e.preventDefault();
