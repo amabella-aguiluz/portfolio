@@ -2,13 +2,11 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-const serviceId = "service_10v1tjq";
-const templateId = "template_omfro4h";
-const publicKey = "k4gzPCvIIUGBXUTZJ";
-
+const serviceId = import.meta.env.VITE_SERVICEID;
+const templateId = import.meta.env.VITE_TEMPLATEID;
+const publicKey = import.meta.env.VITE_PUBLICKEY;
 
 export const ContactUs = () => {
-
     const form = useRef();
 
     const [sendButton, setSendButton] = useState('Send');
@@ -17,9 +15,9 @@ export const ContactUs = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(serviceId, templateId, form.current, {
-        publicKey: publicKey,
-      })
+      .sendForm(serviceId, templateId, form.current,
+        publicKey
+      )
       .then(
         () => {
           console.log('SUCCESS!');
