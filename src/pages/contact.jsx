@@ -24,6 +24,7 @@ export const ContactUs = () => {
         () => {
           console.log('SUCCESS!');
           setSendButton('Thank you, your message has been sent.');
+          setTimeout(() => setSendButton('Send'), 5000);
         },
         (error) => {
           console.log('FAILED...', error.text);
