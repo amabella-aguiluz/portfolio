@@ -4,7 +4,7 @@ import Experience from "./experience.jsx";
 
 const Profile = ({id}) =>{
   return(
-    <div id={id} className="divBg flex flex-row flex-wrap p-4 rounded-2xl w-full h-auto gap-5">
+    <div id={id} className="divBg flex flex-row flex-wrap p-4 rounded-2xl w-full h-auto gap-5 justify-center items-center">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>
