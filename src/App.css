@@ -8,7 +8,7 @@ body {
 }
 
 .logos {
-  @apply text-[#EE6983];
+  @apply text-[#EE6983] hover:text-[#FFC4C4];
   height: 2em;
   width: 2em;
 }
