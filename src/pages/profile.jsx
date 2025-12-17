@@ -2,9 +2,9 @@ import PortraitImage from "./components/portraitimage";
 import portrait_pic from '../assets/pfp.jpg'
 import Experience from "./experience.jsx";
 
-const Profile = ({}) =>{
+const Profile = ({id}) =>{
   return(
-    <div className="flex flex-row flex-wrap p-4 rounded-2xl w-full h-auto gap-5">
+    <div id={id} className="flex flex-row flex-wrap p-4 rounded-2xl w-full h-auto gap-5">
       <div className='flex-shrink-0'>
         <PortraitImage className="items-center" src={portrait_pic} alt="Profile Picture" />
       </div>

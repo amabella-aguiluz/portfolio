@@ -1,8 +1,11 @@
 import PortfolioSample from './components/portfoliosample.jsx'
 
-const PortfolioSet = ({}) => {
+const PortfolioSet = ({id}) => {
   return(
-    <div className="flex flex-row justify-around gap-2 flex-wrap">
+    <div id={id}>
+          <h2> Projects </h2>
+          <br />
+    <div className="flex flex-row gap-2 flex-wrap">
       <PortfolioSample title="Spinagotchi"
         skills="React, TailwindCSS, ElectronJS" 
         description="A desktop tamagotchi."
@@ -17,6 +20,11 @@ const PortfolioSet = ({}) => {
         skills="Figma"
         description="A UI/UX mockup for an app where you can find local gigs anywhere."
         githubUrl="https://github.com/amabella-aguiluz/gigbytes_demo" />
+      <PortfolioSample title="Portfolio Site"
+        skills="React, TailwindCSS"
+        description="You're here! My personal portfolio website."
+        githubUrl="https://github.com/amabella-aguiluz/portfolio" />
+    </div>
     </div>
   )
 }

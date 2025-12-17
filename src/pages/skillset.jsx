@@ -5,9 +5,9 @@ import {FaFigma} from 'react-icons/fa'
 import {RiTailwindCssFill} from 'react-icons/ri'
 import SkillIcon from './components/skillicon'
 
-const Skillset = ({}) => {
+const Skillset = ({id}) => {
   return(
-    <div>
+    <div id={id}>
     <h2>My Skillset</h2>
     <br />
     <div className="flex flex-wrap gap-2 p-4 rounded-2xl w-auto h-auto justify-evenly md:justify-start">

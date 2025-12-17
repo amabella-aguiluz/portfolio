@@ -6,17 +6,21 @@ import Profile from './pages/profile.jsx'
 import Skillset from './pages/skillset.jsx'
 import PortfolioSet from './pages/portfolioset.jsx'
 import ContactMe from './pages/contactme.jsx'
+import Navbar from './pages/components/navbar.jsx'
 
 // links
 
 function App() {
   return (
     <>
-    <div className="min-h-screen gap-10 max-w-4xl px-6 flexcol py-10 mx-auto items-center">
-      <Profile />
-      <Skillset />
-      <PortfolioSet />
-      <ContactMe />
+    <div>
+      <Navbar />
+      <div className="min-h-screen gap-10 max-w-4xl px-6 flexcol py-10 mx-10">
+      <Profile id="profile"/>
+      <Skillset id="skillset"/>
+      <PortfolioSet id="portfolio"/>
+      <ContactMe id="contact"/>
+      </div>
       </div>
     </>
   )
