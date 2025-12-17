@@ -7,7 +7,7 @@ import SkillIcon from './components/skillicon'
 
 const Skillset = ({id}) => {
   return(
-    <div id={id}>
+    <div id={id} className="divBg">
     <h2>My Skillset</h2>
     <br />
     <div className="flex flex-wrap gap-2 p-4 rounded-2xl w-auto h-auto justify-evenly md:justify-start">

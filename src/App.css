@@ -4,7 +4,7 @@ html{
   scroll-behavior: smooth
 }
 body {
-  @apply bg-[#FCF5EE];
+  @apply bg-[url('assets/bg.jpg')] bg-cover;
 }
 
 .logos {
@@ -51,4 +51,8 @@ input, textarea {
 
 .buttoncolor{
   @apply bg-[#EE6983] text-[#FCF5EE] rounded-xl p-4
+}
+
+.divBg {
+  @apply bg-[#fef8fb] p-5 rounded-2xl;
 }

@@ -15,7 +15,7 @@ function App() {
     <>
     <div>
       <Navbar />
-      <div className="min-h-screen gap-10 max-w-4xl px-6 flexcol py-10 mx-10">
+      <div className="min-h-screen gap-10 max-w-4xl px-3 flexcol py-10 mx-5">
       <Profile id="profile"/>
       <Skillset id="skillset"/>
       <PortfolioSet id="portfolio"/>

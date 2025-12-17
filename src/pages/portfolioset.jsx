@@ -2,7 +2,7 @@ import PortfolioSample from './components/portfoliosample.jsx'
 
 const PortfolioSet = ({id}) => {
   return(
-    <div id={id}>
+    <div id={id} className="divBg">
           <h2> Projects </h2>
           <br />
     <div className="flex flex-row gap-2 flex-wrap">
