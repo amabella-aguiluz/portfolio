@@ -3,7 +3,7 @@ const IconButton = ({url, icon}) =>{
   window.open(url, "_blank");
   };
   return(
-    <button onClick={click} className="p-2 flex items-center">
+    <button onClick={click} className="cursor-grab p-2 flex items-center">
       {icon}
     </button>
   )
