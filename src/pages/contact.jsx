@@ -8,6 +8,9 @@ const publicKey = import.meta.env.VITE_PUBLICKEY;
 
 export const ContactUs = () => {
     const form = useRef();
+    console.log("ServiceID:", import.meta.env.VITE_SERVICEID);
+console.log("TemplateID:", import.meta.env.VITE_TEMPLATEID);
+console.log("PublicKey:", import.meta.env.VITE_PUBLICKEY);
 
     const [sendButton, setSendButton] = useState('Send');
 
