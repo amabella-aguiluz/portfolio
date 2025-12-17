@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import IconButton from "./components/iconbutton.jsx";
 
 const linkedin = "https://www.linkedin.com/in/amabella-aguiluz";
-const github = "https://github.com/amabella-aguiluz";
+const github = "https://www.linkedin.com/in/amabella-aguiluz-7500a5336/";
 
 
 const ContactLinks = ({}) => {
