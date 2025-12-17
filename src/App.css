@@ -56,3 +56,35 @@ input, textarea {
 .divBg {
   @apply bg-[#fef8fb] p-5 rounded-2xl;
 }
+
+
+/* app.css */
+
+/* Default: mobile-first */
+.app-content {
+  display: flex;
+  flex-direction: column; /* stacked on mobile */
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 100%; /* full width on mobile */
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .app-content {
+    flex-direction: row; /* side by side */
+    align-items: flex-start;
+  }
+
+  .main-content {
+    flex: 1; /* main content takes remaining space */
+  }
+
+  .sidebar {
+    width: 300px;      /* fixed width sidebar */
+    flex-shrink: 0;    /* don’t shrink */
+    margin-left: 2rem; /* spacing from main content */
+  }
+}

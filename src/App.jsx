@@ -15,11 +15,14 @@ function App() {
     <>
     <div>
       <Navbar />
-      <div className="min-h-screen gap-10 max-w-4xl px-3 flexcol py-10 mx-5">
+      <div className="app-content flex flex-row justify-center min-h-screen mt-5 mb-5 gap-10">
+      <div className="main-content min-h-screen gap-10 max-w-6xl flexcol px-4">
       <Profile id="profile"/>
       <Skillset id="skillset"/>
-      <PortfolioSet id="portfolio"/>
+      <PortfolioSet id="portfolio"/></div>
+      <div className="sidebar px-4">
       <ContactMe id="contact"/>
+      </div>
       </div>
       </div>
     </>
