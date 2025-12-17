@@ -4,7 +4,7 @@ import NavbarLink from "./navbarlink.jsx";
 const Navbar = ({}) => {
   return(
     <nav className="bg-[#EE6983] w-full sticky top-0 z-50 p-4">
-        <div className="flex flex-row gap-8 justify-start  items-center">
+        <div className="flex flex-row gap-5 justify-start  items-center">
             {/* navbar links */}
             <NavbarLink link="#profile" linkname="Profile" />
             <NavbarLink link="#skillset" linkname="Skillset" />

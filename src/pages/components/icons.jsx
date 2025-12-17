@@ -12,6 +12,7 @@ import { SiGnubash } from "react-icons/si";
 import { SiScrapy } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { IoLogoVercel } from "react-icons/io5";
 
 
 const colors = {
@@ -19,4 +20,4 @@ const colors = {
     light: "#FFC4C4",
     main: "#EE6983",
     dark: "#850E35",};
-export {colors, DiGithubBadge, FaLinkedin, DiGit, DiPython, DiReact, SiSqlite, IoLogoElectron, SiGnubash, SiScrapy, FaFigma, RiTailwindCssFill};
+export {colors, DiGithubBadge, FaLinkedin, DiGit, DiPython, DiReact, SiSqlite, IoLogoElectron, SiGnubash, SiScrapy, FaFigma, RiTailwindCssFill, IoLogoVercel};

@@ -57,6 +57,9 @@ input, textarea {
   @apply bg-[#fef8fb] p-5 rounded-2xl border-2 border-[#FFC4C4];
 }
 
+#profile {
+  @apply md:justify-start;
+}
 
 /* app.css */
 
