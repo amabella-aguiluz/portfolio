@@ -20,6 +20,7 @@ const PortfolioSet = ({id}) => {
         skills="Figma"
         description="A UI/UX mockup for an app where you can find local gigs anywhere."
         githubUrl="https://github.com/amabella-aguiluz/gigbytes_demo" />
+        <br />
       <PortfolioSample title="Portfolio Site"
         skills="React, TailwindCSS"
         description="You're here! My personal portfolio website."
