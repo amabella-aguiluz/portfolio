@@ -1,5 +1,5 @@
-import ContactUs from "./contact.jsx";
-import ContactLinks from "./contactlinks.jsx";
+import ContactUs from './components/components.jsx';
+import ContactLinks from './components/components.jsx';
 
 const ContactMe = ({id}) => {
   return(

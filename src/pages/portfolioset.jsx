@@ -1,4 +1,4 @@
-import PortfolioSample from './components/portfoliosample.jsx'
+import PortfolioSample from './components/components.jsx'
 
 const PortfolioSet = ({id}) => {
   return(

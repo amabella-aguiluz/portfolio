@@ -3,7 +3,7 @@ import {SiSqlite, SiGnubash, SiScrapy} from 'react-icons/si'
 import {IoLogoElectron} from 'react-icons/io5'
 import {FaFigma} from 'react-icons/fa'
 import {RiTailwindCssFill} from 'react-icons/ri'
-import SkillIcon from './components/skillicon'
+import SkillIcon from "./components/components.jsx";
 
 const Skillset = ({id}) => {
   return(

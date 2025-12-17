@@ -1,6 +1,6 @@
-import PortraitImage from "./components/portraitimage";
-import portrait_pic from '../assets/pfp.jpg'
-import Experience from "./experience.jsx";
+import PortraitImage from "./components/components.jsx";
+import portrait_pic from '../assets/pfp.jpg';
+import Experience from "./components/components.jsx";
 
 const Profile = ({id}) =>{
   return(
