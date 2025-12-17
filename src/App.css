@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 body {
   @apply bg-[#FCF5EE];
 }
@@ -52,5 +47,5 @@ input, textarea {
 }
 
 .buttoncolor{
-  @apply bg-[#EE6983] text-[#FCF5EE]
+  @apply bg-[#EE6983] text-[#FCF5EE] rounded-xl p-4
 }

@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import portrait_pic from "./assets/pfp.jpg"
-import ContactUs from './pages/contact.jsx'
 import {DiGithubBadge, FaLinkedin, DiGit, DiPython, DiReact, SiSqlite, IoLogoElectron, SiGnubash, SiScrapy, FaFigma, RiTailwindCssFill}
-    from './pages/icons.jsx'
+    from './pages/components/icons.jsx'
+import Profile from './pages/profile.jsx'
+import Skillset from './pages/skillset.jsx'
+import PortfolioSet from './pages/portfolioset.jsx'
+import ContactMe from './pages/contactme.jsx'
 
 // links
-const email = "amabellaaguiluz1@gmail.com";
-const linkedin = "https://www.linkedin.com/in/amabella-aguiluz";
-const github = "https://github.com/amabella-aguiluz";
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
       <Profile />
       <Skillset />
       <PortfolioSet />
-      <ContactMeAll />
+      <ContactMe />
       </div>
     </>
   )
