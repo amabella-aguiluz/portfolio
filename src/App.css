@@ -89,5 +89,7 @@ input, textarea {
     width: 300px;      /* fixed width sidebar */
     flex-shrink: 0;    /* don’t shrink */
     margin-left: 2rem; /* spacing from main content */
+    position: sticky;
+    top: 5rem;
   }
 }
