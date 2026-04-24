@@ -11,6 +11,13 @@ const PortfolioSet = ({id}) => {
         description="A desktop tamagotchi."
         githubUrl="https://github.com/amabella-aguiluz/spinagotchi" />
     <br />
+    <PortfolioSample title="Find Your Pages"
+        skills="React, Node.js, Express, Typescript, MySQL, Vercel" 
+        description="A full-stack horror-themed notes app for creating and managing notes."
+        githubUrl="https://github.com/amabella-aguiluz/notes-frontend"
+        demoUrl="https://find-your-pages.vercel.app"
+        />
+    <br />
       <PortfolioSample title="Angela_Bot"
           skills="Python, SQLite"
           description="A general-use Discord bot."
