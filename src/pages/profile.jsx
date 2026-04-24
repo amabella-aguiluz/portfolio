@@ -10,8 +10,10 @@ const Profile = ({id}) =>{
       </div>
       <div>
         <h1> Amabella Aguiluz</h1>
-        <h2> Web Developer </h2>
-        <p>I'm a junior developer with a passion for creativity and learning new things everyday.</p>
+        <h2> Full-stack Web Developer </h2>
+        <p>I'm a full-stack developer who enjoys building interactive web applications with a focus on design.</p>
+        <p>I enjoy working on projects where I can combine logic and creativity.</p>
+        <p>I am always exploring new tools, frameworks, continuously improving my skills as a developer.</p>
         <br />
         <h2>Schooling</h2>
         <h3>AMA Computer College Baguio (2024-Present)</h3>
